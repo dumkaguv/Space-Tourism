@@ -2,12 +2,16 @@
 
 .hero {
   --header-height: #{toRem(-136)};
-
   align-content: end;
   margin-top: var(--header-height);
   height: 100dvh;
   background: url("../../images/home/background-home-desktop.jpg")
     no-repeat center / cover;
+
+  @media (max-height: #{toRem(600)}) and (max-width: #{toRem(767)}) {
+    height: 100%;
+    padding-top: toRem(150);
+  }
 
   @include tablet() {
     --header-height: #{toRem(-96)};
@@ -19,7 +23,6 @@
 
   @include mobile-m {
     --header-height: #{toRem(-101)};
-    align-content: center;
     background-image: url("../../images/home/background-home-mobile.jpg");
   }
 }
@@ -38,6 +41,21 @@
     justify-content: center;
     row-gap: var(--spacing-600);
     padding-block: var(--spacing-800);
+  }
+
+  @media (max-height: #{toRem(750)}) and (min-width: #{toRem(768)}) {
+    padding-block: var(--spacing-500);
+    flex-direction: row;
+    column-gap: var(--spacing-600);
+    padding-inline: var(--spacing-500);
+
+    .hero__content-button-text {
+      font-size: toRem(18);
+    }
+
+    .hero__content-title {
+      font-size: toRem(65);
+    }
   }
 
   @include mobile-m() {

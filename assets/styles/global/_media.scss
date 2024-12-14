@@ -1,12 +1,13 @@
-//@import "./functions";
-$desktop-large-above: 1440px;
-$desktop-large: 1439px;
+@import "./functions";
 
-$desktop-above: 1281px;
-$desktop: 1280px;
+$desktop-large-above: toRem(1440);
+$desktop-large: toRem(1439);
 
-$tablet-above: 1024px;
-$tablet: 1023px;
+$desktop-above: toRem(1281);
+$desktop: toRem(1280);
+
+$tablet-above: toRem(1024);
+$tablet: toRem(1023);
 
 $mobile-above: 768px;
 $mobile: 767px;
