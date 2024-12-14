@@ -1,0 +1,12 @@
+.active-link {
+  position: relative;
+
+  &::before {
+    background-color: var(--color-light);
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+  }
+}

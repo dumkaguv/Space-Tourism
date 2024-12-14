@@ -1,0 +1,422 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "BarlowCondensed";
+  src: url("../../fonts/BarlowCondensed-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow";
+  src: url("../../fonts/Barlow-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bellefair";
+  src: url("../../fonts/Bellefair-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/**
+  Нормализация блочной модели
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+   Убираем внутренние отступы слева тегам списков,
+   у которых есть атрибут class
+  */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+   Убираем внешние отступы body и двум другим тегам,
+   у которых есть атрибут class
+  */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+   Убираем внешние отступы вертикали нужным тегам,
+   у которых есть атрибут class
+  */
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+   Убираем стандартный маркер маркированному списку,
+   у которого есть атрибут class
+  */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+   Обнуляем вертикальные внешние отступы параграфа,
+   объявляем локальную переменную для внешнего отступа вниз,
+   чтобы избежать взаимодействие с более сложным селектором
+  */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+   Внешний отступ вниз для параграфа без атрибута class,
+   который расположен не последним среди своих соседних элементов
+  */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+   Упрощаем работу с изображениями
+  */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/**
+   Наследуем свойства шрифт для полей ввода
+  */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+  height: 100%;
+}
+
+/**
+   Плавный скролл
+  */
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+  min-height: 100%;
+  /**
+     Унифицированный интерлиньяж
+    */
+  line-height: 1.5;
+}
+
+/**
+   Приводим к единому цвету svg-элементы
+  */
+svg *[fill] {
+  fill: currentColor;
+}
+
+svg *[stroke] {
+  stroke: currentColor;
+}
+
+/**
+   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+  */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+   Удаляем все анимации и переходы для людей,
+   которые предпочитают их не использовать
+  */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-size: clamp(1rem, 18 / 1440 * 100dvw, 1.125rem);
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  line-height: 1.28;
+  color: var(--color-accent);
+  background-color: #343434;
+}
+
+img {
+  height: auto;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a, button, svg {
+  cursor: pointer;
+}
+
+h1, .h1, h2,
+.h2, h3,
+.h3, h4,
+.h4 {
+  font-weight: 500;
+}
+
+h1,
+.h1 {
+  font-size: clamp(2.6875rem, 60 / 1440 * 100dvw, 3.75rem);
+}
+
+h2,
+.h2 {
+  font-size: clamp(2.25rem, 40 / 1440 * 100dvw, 2.5rem);
+}
+
+h3,
+.h3 {
+  font-size: clamp(1.625rem, 30 / 1440 * 100dvw, 1.875rem);
+}
+
+h4,
+.h4 {
+  font-size: clamp(1.125rem, 20 / 1440 * 100dvw, 1.25rem);
+}
+
+:root {
+  --color-light: #ffffff;
+  --color-accent: #d0d6f9;
+  --color-dark: #0b0d17;
+  --color-gray: rgba(255, 255, 255, 0.50);
+  --font-family-base: "Barlow", sans-serif;
+  --font-family-bellefair: "Bellefair", sans-serif;
+  --font-family-condensed: "BarlowCondensed", sans-serif;
+  --container-width: 90rem;
+  --container-padding-x: 10.3125rem;
+  --spacing-1600: 8rem;
+  --spacing-1200: 6rem;
+  --spacing-1000: 5rem;
+  --spacing-800: 4rem;
+  --spacing-600: 3rem;
+  --spacing-500: 2.5rem;
+  --spacing-400: 2rem;
+  --spacing-300: 1.5rem;
+  --spacing-200: 1rem;
+  --spacing-150: 0.75rem;
+  --spacing-100: 0.5rem;
+  --spacing-50: 0.25rem;
+  --spacing-25: 0.125rem;
+  --transition-duration: 0.2s;
+  /* breakpoints  
+    $desktop-above: 1281px;
+    $desktop: 1280px;
+
+    $tablet-above: 1024px;
+    $tablet: 1023px;
+
+    $mobile-above: 768px;
+    $mobile: 767px;
+
+    $mobile-s-above: 481px;
+    $mobile-s: 480px;
+
+    $mobile-xs-above: 400px;
+    $mobile-xs: 399px;
+  */
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  -webkit-clip-path: inset(100%) !important;
+          clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@media (max-width: 1023px) {
+  .hidden-tablet {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hidden-mobile-s {
+    display: none !important;
+  }
+}
+
+@media (max-width: 399px) {
+  .hidden-mobile-xs {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .visible-mobile {
+    display: none !important;
+  }
+}
+
+.header {
+  color: var(--color-light);
+  font-family: var(--font-family-condensed);
+  font-size: 1rem;
+  letter-spacing: 0.125rem;
+  display: flex;
+  padding-inline: var(--spacing-800);
+  padding-top: var(--spacing-500);
+}
+@media (max-width: 480px) {
+  .header {
+    font-size: 0.875rem;
+  }
+}
+.header__logo {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  -moz-column-gap: var(--spacing-800);
+       column-gap: var(--spacing-800);
+}
+.header__logo-icon {
+  flex-shrink: 0;
+}
+.header__logo-line {
+  min-width: 95%;
+  margin-left: 0;
+  z-index: 1;
+}
+.header__menu {
+  margin-left: auto;
+  text-transform: uppercase;
+  min-width: 41.5rem;
+  min-height: 6rem;
+  -webkit-backdrop-filter: blur(2.5rem);
+          backdrop-filter: blur(2.5rem);
+}
+.header__menu-list {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  -moz-column-gap: var(--spacing-600);
+       column-gap: var(--spacing-600);
+  justify-content: end;
+}
+.header__menu-item {
+  height: 100%;
+}
+.header__menu-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  -moz-column-gap: var(--spacing-150);
+       column-gap: var(--spacing-150);
+}
+.header__menu-link-number {
+  color: var(--color-light);
+  font-family: var(--font-family-condensed);
+  font-size: 1rem;
+  letter-spacing: 0.16875rem;
+  font-weight: 700;
+}
+@media (max-width: 480px) {
+  .header__menu-link-number {
+    font-size: 0.875rem;
+  }
+}
+.header__menu-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--color-gray);
+  transition-duration: inherit;
+}
+@media (hover: hover) {
+  .header__menu-link:hover::after {
+    width: 100%;
+  }
+}
+@media (hover: none) {
+  .header__menu-link:active::after {
+    width: 100%;
+  }
+}
+
+.active-link {
+  position: relative;
+}
+.active-link::before {
+  background-color: var(--color-light);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,184 @@
+@import "./functions";
+
+@mixin fluid-text(
+  $min: $font-size-base,
+  $max: 48,
+  $breakpoint: $breakpoint-default
+) {
+  font-size: clamp(
+    #{toRem($min)},
+    calc(#{$max} / #{$breakpoint} * 100dvw),
+    #{toRem($max)}
+  );
+}
+
+@mixin reset-link {
+  color: inherit;
+
+  &,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@mixin reset-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+@mixin flex-center($isInline: false) {
+  @if $isInline {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin square($size) {
+  width: $size;
+  aspect-ratio: 1;
+}
+
+@mixin textPreset-1() {
+  color: var(--color-light);
+
+  font-family: var(--font-family-bellefair);
+  font-size: toRem(144);
+
+  @include mobile-s() {
+    font-size: toRem(80);
+  }
+}
+
+@mixin textPreset-2() {
+  color: var(--color-light);
+
+  font-family: var(--font-family-bellefair);
+  font-size: toRem(96);
+
+  @include tablet() {
+    font-size: toRem(80);
+  }
+
+  @include mobile-s() {
+    font-size: toRem(56);
+  }
+}
+
+@mixin textPreset-3() {
+  color: var(--color-light);
+
+  font-family: var(--font-family-bellefair);
+  font-size: toRem(56);
+
+  @include tablet() {
+    font-size: toRem(40);
+  }
+
+  @include mobile-s() {
+    font-size: toRem(24);
+  }
+}
+
+@mixin textPreset-4() {
+  color: var(--color-light);
+
+  font-family: var(--font-family-bellefair);
+  font-size: toRem(32);
+
+  @include tablet() {
+    font-size: toRem(24);
+  }
+
+  @include mobile-s() {
+    font-size: toRem(18);
+  }
+}
+
+@mixin textPreset-5() {
+  color: var(--color-accent);
+
+  font-family: var(--font-family-condensed);
+  font-size: toRem(28);
+  letter-spacing: toRem(4);
+
+  @include tablet() {
+    font-size: toRem(20);
+  }
+
+  @include mobile-s() {
+    font-size: toRem(18);
+  }
+}
+
+@mixin textPreset-6() {
+  color: var(--color-light);
+
+  font-family: var(--font-family-bellefair);
+  font-size: toRem(28);
+
+  @include mobile-s() {
+    font-size: toRem(16);
+  }
+}
+
+@mixin textPreset-7() {
+  color: var(--color-light);
+
+  font-family: var(--font-family-condensed);
+  font-size: toRem(14);
+  letter-spacing: toRem(2);
+}
+
+@mixin textPreset-8() {
+  color: var(--color-light);
+
+  font-family: var(--font-family-condensed);
+  font-size: toRem(16);
+  letter-spacing: toRem(2);
+
+  @include mobile-s() {
+    font-size: toRem(14);
+  }
+}
+
+@mixin textPreset-8-bold() {
+  color: var(--color-light);
+
+  font-family: var(--font-family-condensed);
+  font-size: toRem(16);
+  letter-spacing: toRem(2.7);
+  font-weight: 700;
+
+  @include mobile-s() {
+    font-size: toRem(14);
+  }
+}
+
+
+@mixin textPreset-9() {
+  color: var(--color-light);
+
+  font-family: var(--font-family-base);
+  font-size: toRem(18);
+  line-height: 180%;
+
+  @include tablet() {
+    font-size: toRem(16);
+  }
+
+  @include mobile-s() {
+    font-size: toRem(15);
+  }
+}

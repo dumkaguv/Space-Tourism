@@ -1,0 +1,48 @@
+@import "./functions";
+
+:root {
+  --color-light: #ffffff;
+  --color-accent: #d0d6f9;
+  --color-dark: #0b0d17;
+  --color-gray: rgba(255, 255, 255, 0.50);
+
+  --font-family-base: "Barlow", sans-serif;
+  --font-family-bellefair: "Bellefair", sans-serif;
+  --font-family-condensed: "BarlowCondensed", sans-serif;
+
+  --container-width: #{toRem(1440)};
+  --container-padding-x: #{toRem(165)};
+
+  --spacing-1600: #{toRem(128)};
+  --spacing-1200: #{toRem(96)};
+  --spacing-1000: #{toRem(80)};
+  --spacing-800: #{toRem(64)};
+  --spacing-600: #{toRem(48)};
+  --spacing-500: #{toRem(40)};
+  --spacing-400: #{toRem(32)};
+  --spacing-300: #{toRem(24)};
+  --spacing-200: #{toRem(16)};
+  --spacing-150: #{toRem(12)};
+  --spacing-100: #{toRem(8)};
+  --spacing-50: #{toRem(4)};
+  --spacing-25: #{toRem(2)};
+
+  --transition-duration: 0.2s;
+
+  /* breakpoints  
+    $desktop-above: 1281px;
+    $desktop: 1280px;
+
+    $tablet-above: 1024px;
+    $tablet: 1023px;
+
+    $mobile-above: 768px;
+    $mobile: 767px;
+
+    $mobile-s-above: 481px;
+    $mobile-s: 480px;
+
+    $mobile-xs-above: 400px;
+    $mobile-xs: 399px;
+  */
+}

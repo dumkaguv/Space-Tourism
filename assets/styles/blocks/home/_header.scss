@@ -1,0 +1,74 @@
+@import "../../global/functions";
+
+.header {
+  @include textPreset-8();
+
+  display: flex;
+  padding-inline: var(--spacing-800);
+  padding-top: var(--spacing-500);
+
+  &__logo {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    column-gap: var(--spacing-800);
+
+    &-icon {
+      flex-shrink: 0;
+    }
+
+    &-line {
+      min-width: 95%;
+      margin-left: 0;
+      z-index: 1;
+    }
+  }
+
+  &__menu {
+    margin-left: auto;
+    text-transform: uppercase;
+    min-width: toRem(664);
+    min-height: toRem(96);
+    backdrop-filter: blur(toRem(40));
+
+    &-list {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      column-gap: var(--spacing-600);
+      justify-content: end;
+    }
+
+    &-item {
+      height: 100%;
+    }
+
+    &-link {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      column-gap: var(--spacing-150);
+
+      &-number {
+        @include textPreset-8-bold();
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 3px;
+        background-color: var(--color-gray);
+        transition-duration: inherit;
+      }
+
+      @include hover() {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

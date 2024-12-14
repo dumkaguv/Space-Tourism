@@ -1,0 +1,22 @@
+$font-size-base: 16;
+$breakpoint-default: 1440;
+
+@function toRem($size, $base: $font-size-base) {
+  @return ($size / $base) * 1rem;
+}
+
+@function toRemValue($size, $base: $font-size-base) {
+  @return ($size / $base);
+}
+
+@function fluid-common(
+  $min: 16,
+  $max: 48,
+  $breakpoint: $breakpoint-default
+) {
+  @return clamp(
+    #{toRem($min)},
+    calc(#{toRemValue($max)} / #{toRemValue($breakpoint)} * 100dvw),
+    #{toRem($max)}
+  );
+}
