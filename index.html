@@ -13,13 +13,14 @@
   <body>
     <header class="header">
       <div class="header__logo">
-        <a href="./index.html">
+        <a class="header__logo-link" href="./index.html">
           <svg
             class="header__logo-icon"
             width="48"
             height="48"
             viewBox="0 0 48 48"
             fill="none"
+            alt="logo"
           >
             <path
               fill-rule="evenodd"
@@ -31,7 +32,7 @@
         </a>
         <hr class="header__logo-line hidden-tablet" size="0.25" />
       </div>
-      <nav class="header__menu">
+      <nav class="header__menu hidden-mobile-m">
         <ul class="header__menu-list">
           <li class="header__menu-item">
             <a class="header__menu-link active-link" href="./index.html">
@@ -59,6 +60,80 @@
           </li>
         </ul>
       </nav>
+      <button class="header__burger-menu visible-mobile-m" type="button">
+        <svg
+          class="header__burger-menu-icon"
+          width="24"
+          height="24"
+          viewBox="0 0 24 22"
+          fill="none"
+        >
+          <rect y="0.5" width="24" height="3" fill="#D0D6F9" />
+          <rect y="9.5" width="24" height="3" fill="#D0D6F9" />
+          <rect y="18.5" width="24" height="3" fill="#D0D6F9" />
+        </svg>
+      </button>
     </header>
+    <main class="content container"></main>
+
+    <div class="modal-burger visible-mobile-m">
+      <button class="modal-burger__close" type="button">
+        <svg
+          class="modal-burger__close-icon"
+          width="20"
+          height="21"
+          viewBox="0 0 20 21"
+          fill="none"
+        >
+          <rect
+            x="2.5752"
+            y="0.954102"
+            width="24"
+            height="3"
+            transform="rotate(45 2.5752 0.954102)"
+            fill="#D0D6F9"
+          />
+          <rect
+            x="0.454102"
+            y="17.9246"
+            width="24"
+            height="3"
+            transform="rotate(-45 0.454102 17.9246)"
+            fill="#D0D6F9"
+          />
+        </svg>
+      </button>
+      <div class="modal-burger__content">
+        <nav class="header__menu">
+          <ul class="header__menu-list">
+            <li class="header__menu-item">
+              <a class="header__menu-link active-link" href="./index.html">
+                <span class="header__menu-link-number">00</span>
+                <div class="header__menu-link-text">Home</div>
+              </a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__menu-link" href="./index.html">
+                <span class="header__menu-link-number">01</span>
+                <div class="header__menu-link-text">Destination</div>
+              </a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__menu-link" href="./index.html">
+                <span class="header__menu-link-number">02</span>
+                <div class="header__menu-link-text">Crew</div>
+              </a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__menu-link" href="./index.html">
+                <span class="header__menu-link-number">03</span>
+                <div class="header__menu-link-text">Technology</div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <script src="./assets/scripts/main.js" type="module"></script>
   </body>
 </html>

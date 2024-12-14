@@ -4,7 +4,7 @@
   --color-light: #ffffff;
   --color-accent: #d0d6f9;
   --color-dark: #0b0d17;
-  --color-gray: rgba(255, 255, 255, 0.50);
+  --color-gray: #ffffff80;
 
   --font-family-base: "Barlow", sans-serif;
   --font-family-bellefair: "Bellefair", sans-serif;
@@ -38,6 +38,9 @@
 
     $mobile-above: 768px;
     $mobile: 767px;
+
+    $mobile-m-above: 641px;
+    $mobile-m: 640px;
 
     $mobile-s-above: 481px;
     $mobile-s: 480px;

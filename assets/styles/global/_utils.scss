@@ -2,6 +2,14 @@
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
   margin-inline: auto;
   padding-inline: var(--container-padding-x);
+
+  @include mobile() {
+    padding-inline: var(--spacing-500);
+  }
+
+  @include mobile-m() {
+    padding-inline: var(--spacing-300);
+  }
 }
 
 .visually-hidden {
@@ -29,6 +37,12 @@
   }
 }
 
+.hidden-mobile-m {
+  @include mobile-m {
+    display: none !important;
+  }
+}
+
 .hidden-mobile-s {
   @include mobile-s {
     display: none !important;
@@ -37,6 +51,12 @@
 
 .hidden-mobile-xs {
   @include mobile-xs {
+    display: none !important;
+  }
+}
+
+.visible-mobile-m {
+  @include mobile-m-above {
     display: none !important;
   }
 }

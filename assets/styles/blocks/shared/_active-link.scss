@@ -9,4 +9,12 @@
     height: 3px;
     bottom: 0;
   }
+
+  @include mobile-m() {
+    &::before {
+      right: 0;
+      width: 3px;
+      height: 100%;
+    }
+  }
 }

@@ -7,14 +7,31 @@
   padding-inline: var(--spacing-800);
   padding-top: var(--spacing-500);
 
+  @include tablet() {
+    padding-inline: var(--spacing-500);
+    padding-top: 0;
+  }
+
+  @include mobile-m() {
+    padding: var(--spacing-300);
+  }
+
   &__logo {
     display: flex;
     width: 100%;
     align-items: center;
     column-gap: var(--spacing-800);
 
+    @include mobile() {
+      width: fit-content;
+    }
+
     &-icon {
       flex-shrink: 0;
+      @include mobile() {
+        width: toRem(40);
+        aspect-ratio: 1;
+      }
     }
 
     &-line {
@@ -31,16 +48,34 @@
     min-height: toRem(96);
     backdrop-filter: blur(toRem(40));
 
+    @include mobile() {
+      min-width: toRem(488);
+    }
+
     &-list {
       display: flex;
       align-items: center;
       height: 100%;
       column-gap: var(--spacing-600);
       justify-content: end;
+
+      @include tablet() {
+        column-gap: var(--spacing-300);
+      }
+
+      @include mobile-m() {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: var(--spacing-400);
+      }
     }
 
     &-item {
       height: 100%;
+
+      @include mobile-m() {
+        width: 100%;
+      }
     }
 
     &-link {
@@ -67,6 +102,14 @@
       @include hover() {
         &::after {
           width: 100%;
+        }
+
+        @include mobile-m() {
+          &::after {
+            right: 0;
+            width: 3px;
+            height: 100%;
+          }
         }
       }
     }
