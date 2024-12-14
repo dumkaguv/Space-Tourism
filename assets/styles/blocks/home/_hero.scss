@@ -1,0 +1,97 @@
+@import "../../global/functions";
+
+.hero {
+  --header-height: #{toRem(-136)};
+
+  align-content: end;
+  margin-top: var(--header-height);
+  height: 100dvh;
+  background: url("../../images/home/background-home-desktop.jpg")
+    no-repeat center / cover;
+
+  @include tablet() {
+    --header-height: #{toRem(-96)};
+  }
+
+  @include mobile() {
+    background-image: url("../../images/home/background-home-tablet.jpg");
+  }
+
+  @include mobile-m {
+    --header-height: #{toRem(-101)};
+    align-content: center;
+    background-image: url("../../images/home/background-home-mobile.jpg");
+  }
+}
+
+.hero__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-block: var(--spacing-1600);
+
+  text-transform: uppercase;
+
+  @include desktop() {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: var(--spacing-600);
+    padding-block: var(--spacing-800);
+  }
+
+  @include mobile-m() {
+    padding-block: var(--spacing-300);
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: var(--spacing-300);
+    max-width: toRem(540);
+
+    @include desktop() {
+      align-items: center;
+    }
+  }
+
+  &-header {
+    @include textPreset-5();
+  }
+
+  &-title {
+    @include textPreset-1();
+
+    @include desktop() {
+      font-size: toRem(100);
+    }
+  }
+
+  &-text {
+    @include textPreset-9();
+    text-transform: none;
+  }
+
+  &-button {
+    &-text {
+      @include textPreset-4();
+    }
+
+    @include reset-button();
+
+    width: toRem(272);
+    aspect-ratio: 1;
+    background-color: var(--color-light);
+    border-radius: 50%;
+
+    @include hover() {
+      color: rgba(0, 0, 0, 0.5);
+      outline: toRem(88) solid rgba(255, 255, 255, 0.15);
+    }
+
+    @include desktop() {
+      width: toRem(180);
+    }
+  }
+}

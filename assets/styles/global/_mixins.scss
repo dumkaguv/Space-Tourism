@@ -92,7 +92,7 @@
 }
 
 @mixin textPreset-4() {
-  color: var(--color-light);
+  color: var(--color-dark);
 
   font-family: var(--font-family-bellefair);
   font-size: toRem(32);
@@ -168,7 +168,7 @@
 
 
 @mixin textPreset-9() {
-  color: var(--color-light);
+  color: var(--color-accent);
 
   font-family: var(--font-family-base);
   font-size: toRem(18);

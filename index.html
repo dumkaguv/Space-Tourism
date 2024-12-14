@@ -12,6 +12,7 @@
   </head>
   <body>
     <header class="header">
+      <!-- Header Logo -->
       <div class="header__logo">
         <a class="header__logo-link" href="./index.html">
           <svg
@@ -32,6 +33,8 @@
         </a>
         <hr class="header__logo-line hidden-tablet" size="0.25" />
       </div>
+
+      <!-- Header Menu -->
       <nav class="header__menu hidden-mobile-m">
         <ul class="header__menu-list">
           <li class="header__menu-item">
@@ -60,6 +63,8 @@
           </li>
         </ul>
       </nav>
+
+      <!-- Header Burger -->
       <button class="header__burger-menu visible-mobile-m" type="button">
         <svg
           class="header__burger-menu-icon"
@@ -74,8 +79,30 @@
         </svg>
       </button>
     </header>
-    <main class="content container"></main>
+    <main class="content">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero__content container">
+          <div class="hero__content-info">
+            <div class="hero__content-header">
+              So, you want to travel to
+            </div>
+            <h1 class="hero__content-title">Space</h1>
+            <div class="hero__content-text">
+              Let’s face it; if you want to go to space, you might as well
+              genuinely go to outer space and not hover kind of on the edge
+              of it. Well sit back, and relax because we’ll give you a
+              truly out of this world experience!
+            </div>
+          </div>
+          <button class="hero__content-button" type="button">
+            <h2 class="hero__content-button-text">Explore</h2>
+          </button>
+        </div>
+      </section>
+    </main>
 
+    <!-- Modal -->
     <div class="modal-burger visible-mobile-m">
       <button class="modal-burger__close" type="button">
         <svg
@@ -103,6 +130,8 @@
           />
         </svg>
       </button>
+
+      <!-- Modal Content -->
       <div class="modal-burger__content">
         <nav class="header__menu">
           <ul class="header__menu-list">

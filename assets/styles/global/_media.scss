@@ -1,4 +1,6 @@
 //@import "./functions";
+$desktop-large-above: 1440px;
+$desktop-large: 1439px;
 
 $desktop-above: 1281px;
 $desktop: 1280px;
@@ -17,6 +19,18 @@ $mobile-s: 480px;
 
 $mobile-xs-above: 400px;
 $mobile-xs: 399px;
+
+@mixin desktop-large-above {
+  @media (min-width: $desktop-large-above) {
+    @content;
+  }
+}
+
+@mixin desktop-large {
+  @media (max-width: $desktop-large) {
+    @content;
+  }
+}
 
 @mixin desktop-above {
   @media (min-width: $desktop-above) {
@@ -65,7 +79,6 @@ $mobile-xs: 399px;
     @content;
   }
 }
-
 
 @mixin mobile-s-above {
   @media (min-width: $mobile-s-above) {

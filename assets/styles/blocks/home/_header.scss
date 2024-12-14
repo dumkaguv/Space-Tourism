@@ -1,15 +1,24 @@
 @import "../../global/functions";
 
 .header {
+  --header-padding-x: #{toRem(-64)};
+
   @include textPreset-8();
 
   display: flex;
+  margin-inline: auto;
   padding-inline: var(--spacing-800);
   padding-top: var(--spacing-500);
+  max-width: var(--header-width);
 
   @include tablet() {
+    --header-padding-x: #{toRem(-40)};
     padding-inline: var(--spacing-500);
     padding-top: 0;
+  }
+
+  @include mobile() {
+    column-gap: var(--spacing-500);
   }
 
   @include mobile-m() {
@@ -35,21 +44,29 @@
     }
 
     &-line {
-      min-width: 95%;
-      margin-left: 0;
-      z-index: 1;
+      @include desktop-large-above() {
+        min-width: fluid-common(200, 620);
+        margin-left: 0;
+        z-index: 1;
+        margin-right: toRem(-32);
+      }
     }
   }
 
   &__menu {
-    margin-left: auto;
     text-transform: uppercase;
     min-width: toRem(664);
     min-height: toRem(96);
     backdrop-filter: blur(toRem(40));
+    background: rgba(255, 255, 255, 0.05);
+    margin-right: var(--header-padding-x);
+    padding-right: var(--spacing-800);
 
     @include mobile() {
       min-width: toRem(488);
+      margin-left: auto;
+      padding-right: 0;
+      padding-inline: toRem(32);
     }
 
     &-list {

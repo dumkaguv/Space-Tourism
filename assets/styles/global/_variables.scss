@@ -10,7 +10,8 @@
   --font-family-bellefair: "Bellefair", sans-serif;
   --font-family-condensed: "BarlowCondensed", sans-serif;
 
-  --container-width: #{toRem(1440)};
+  --header-width: #{toRem(1440)};
+  --container-width: #{toRem(1110)};
   --container-padding-x: #{toRem(165)};
 
   --spacing-1600: #{toRem(128)};
