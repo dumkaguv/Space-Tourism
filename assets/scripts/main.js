@@ -1,1 +1,0 @@
-import { initBurgerModal } from "./modules/home/index.js";

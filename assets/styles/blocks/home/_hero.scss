@@ -92,8 +92,12 @@
   }
 
   &-button {
+    position: relative;
+
     &-text {
       @include textPreset-4();
+      @include abs-center();
+      transition: opacity 0.2s;
     }
 
     @include reset-button();
@@ -104,8 +108,11 @@
     border-radius: 50%;
 
     @include hover() {
-      color: rgba(0, 0, 0, 0.5);
       outline: toRem(88) solid rgba(255, 255, 255, 0.15);
+
+      .hero__content-button-text {
+        opacity: 0.5;;
+      }
     }
 
     @include desktop() {

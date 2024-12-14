@@ -1,8 +1,10 @@
+"use strict";
+
 const burgerButton = document.querySelector(".header__burger-menu");
 const modal = document.querySelector(".modal-burger");
 const showModalButton = document.querySelector(".header__burger-menu");
 
-export function initBurgerModal() {
+function initBurgerModal() {
   burgerButton.addEventListener("click", showMenu);
   modal.addEventListener("click", closeMenu);
 }
