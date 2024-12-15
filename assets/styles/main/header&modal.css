@@ -281,6 +281,11 @@ h4,
   margin-inline: auto;
   padding-inline: var(--container-padding-x);
 }
+@media (max-width: 80rem) {
+  .container {
+    padding-inline: calc(var(--container-padding-x) / 2);
+  }
+}
 @media (max-width: 767px) {
   .container {
     padding-inline: var(--spacing-500);
@@ -408,6 +413,7 @@ h4,
 @media (min-width: 90rem) {
   .header__logo-line {
     min-width: clamp(12.5rem, 38.75 / 90 * 100dvw, 38.75rem);
+    opacity: 0.25;
     margin-left: 0;
     z-index: 1;
     margin-right: -2rem;
@@ -592,8 +598,9 @@ h4,
   height: 3px;
   bottom: 0;
 }
+
 @media (max-width: 640px) {
-  .active-link::before {
+  .header__menu-link.active-link::before {
     right: 0;
     width: 3px;
     height: 100%;

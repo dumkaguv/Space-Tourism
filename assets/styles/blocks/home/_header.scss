@@ -46,6 +46,7 @@
     &-line {
       @include desktop-large-above() {
         min-width: fluid-common(200, 620);
+        opacity: 0.25;
         margin-left: 0;
         z-index: 1;
         margin-right: toRem(-32);

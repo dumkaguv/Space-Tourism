@@ -8,6 +8,11 @@
   background: url("../../images/home/background-home-desktop.jpg")
     no-repeat center / cover;
 
+  @media (max-height: #{toRem(460)}) {
+    padding-top: toRem(150);
+    height: 100%;
+  }
+
   @media (max-height: #{toRem(600)}) and (max-width: #{toRem(767)}) {
     height: 100%;
     padding-top: toRem(150);

@@ -9,7 +9,7 @@ function initBurgerModal() {
   modal.addEventListener("click", closeMenu);
 }
 
-function showMenu(event) {
+function showMenu() {
   modal.style.display = "block";
   showModalButton.style.display = "none";
 }

@@ -10,11 +10,12 @@
     bottom: 0;
   }
 
-  @include mobile-m() {
-    &::before {
-      right: 0;
-      width: 3px;
-      height: 100%;
-    }
+}
+
+@include mobile-m() {
+  .header__menu-link.active-link::before {
+    right: 0;
+    width: 3px;
+    height: 100%;
   }
 }
