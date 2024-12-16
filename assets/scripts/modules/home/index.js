@@ -3,6 +3,11 @@
 const burgerButton = document.querySelector(".header__burger-menu");
 const modal = document.querySelector(".modal-burger");
 const showModalButton = document.querySelector(".header__burger-menu");
+const modalContent = document.querySelector(".modal-burger__content");
+const heroSection = document.querySelector(".hero__content");
+
+initBurgerModal();
+triggerAnimation(heroSection);
 
 function initBurgerModal() {
   burgerButton.addEventListener("click", showMenu);
@@ -12,6 +17,10 @@ function initBurgerModal() {
 function showMenu() {
   modal.style.display = "block";
   showModalButton.style.display = "none";
+
+  requestAnimationFrame(() => {
+    modalContent.style.width = "60%";
+  });
 }
 
 function closeMenu(event) {
@@ -19,9 +28,24 @@ function closeMenu(event) {
     event?.target?.closest(".modal-burger__close") ||
     event?.target === modal
   ) {
-    modal.style.display = "none";
-    showModalButton.style.display = "block";
+    modalContent.style.width = "0";
+
+    modalContent.addEventListener(
+      "transitionend",
+      () => {
+        modal.style.display = "none";
+        showModalButton.style.display = "block";
+      },
+      { once: true }
+    );
   }
 }
 
-initBurgerModal();
+function triggerAnimation(element) {
+  element.classList.remove("active");
+
+  requestAnimationFrame(() => {
+    element.classList.add("active");
+  });
+}
+

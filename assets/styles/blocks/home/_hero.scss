@@ -1,5 +1,19 @@
 @import "../../global/functions";
 
+.active {
+  opacity: 0;
+  animation: fadeIn 0.7s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .hero {
   --header-height: #{toRem(-136)};
   align-content: end;
@@ -7,6 +21,13 @@
   height: 100dvh;
   background: url("../../images/home/background-home-desktop.jpg")
     no-repeat center / cover;
+
+  @media (min-height: #{toRem(1150)}) {
+    align-content: start;
+    &__content {
+      margin-top: toRem(128);
+    }
+  }
 
   @media (max-height: #{toRem(460)}) {
     padding-top: toRem(150);

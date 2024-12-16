@@ -6,8 +6,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Destination</title>
-    <link rel="stylesheet" href="./assets/styles/main/header&modal.css" />
+    <title>Crew</title>
+    <link rel="stylesheet" href="./assets/styles/main/crew.css" />
   </head>
   <body>
     <header class="header">
@@ -43,10 +43,7 @@
             </a>
           </li>
           <li class="header__menu-item">
-            <a
-              class="header__menu-link"
-              href="./destination.html"
-            >
+            <a class="header__menu-link" href="./destination.html">
               <span class="header__menu-link-number">01</span>
               <div class="header__menu-link-text">Destination</div>
             </a>
@@ -81,7 +78,66 @@
         </svg>
       </button>
     </header>
-    <main class="content"></main>
+
+    <!-- Hero Section -->
+    <main class="content">
+      <section class="hero container">
+        <div class="hero__title">
+          <span class="hero__title-number">02</span>
+          <h1 class="hero__title-text">Meet your crew</h1>
+        </div>
+        <div class="hero__content active">
+          <div class="hero__inner">
+            <!-- Inner Content -->
+            <div class="hero__inner-rank">Commander</div>
+            <div class="hero__inner-title">Douglas Hurley</div>
+            <div class="hero__inner-description">
+              Douglas Gerald Hurley is an American engineer, former Marine
+              Corps pilot and former NASA astronaut. He launched into space
+              for the third time as commander of Crew Dragon Demo-2.
+            </div>
+            <ul class="hero__pagination">
+              <li class="hero__pagination-item">
+                <button
+                  class="hero__pagination-button is-current"
+                  type="button"
+                  data-index="0"
+                ></button>
+              </li>
+              <li class="hero__pagination-item">
+                <button
+                  class="hero__pagination-button"
+                  type="button"
+                  data-index="1"
+                ></button>
+              </li>
+              <li class="hero__pagination-item">
+                <button
+                  class="hero__pagination-button"
+                  type="button"
+                  data-index="2"
+                ></button>
+              </li>
+              <li class="hero__pagination-item">
+                <button
+                  class="hero__pagination-button"
+                  type="button"
+                  data-index="3"
+                ></button>
+              </li>
+            </ul>
+          </div>
+          <img
+            class="hero__content-image"
+            src="./assets/images/crew/image-douglas-hurley.webp"
+            alt="Commander Douglas Hurley"
+            width="540"
+            height="676"
+          />
+        </div>
+      </section>
+    </main>
+
     <!-- Modal -->
     <div class="modal-burger visible-mobile-m">
       <button class="modal-burger__close" type="button">
@@ -147,5 +203,6 @@
       </div>
     </div>
     <script src="./assets/scripts/modules/home/index.js"></script>
+    <script src="./assets/scripts/modules/crew/index.js"></script>
   </body>
 </html>

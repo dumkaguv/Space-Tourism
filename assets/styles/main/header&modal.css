@@ -564,9 +564,11 @@ h4,
 .modal-burger__content {
   margin-left: auto;
   max-width: 60%;
-  width: 100%;
+  width: 0;
   -webkit-backdrop-filter: blur(2.5rem);
           backdrop-filter: blur(2.5rem);
+  overflow: hidden;
+  transition: width 0.2s ease-in-out;
 }
 .modal-burger__close {
   padding: 0;

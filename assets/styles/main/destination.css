@@ -564,9 +564,11 @@ h4,
 .modal-burger__content {
   margin-left: auto;
   max-width: 60%;
-  width: 100%;
+  width: 0;
   -webkit-backdrop-filter: blur(2.5rem);
           backdrop-filter: blur(2.5rem);
+  overflow: hidden;
+  transition: width 0.2s ease-in-out;
 }
 .modal-burger__close {
   padding: 0;
@@ -608,6 +610,17 @@ h4,
 }
 body {
   background: url("../../images/destination/background-destination-desktop.jpg") center/cover;
+  background-color: var(--color-dark);
+}
+@media (max-width: 63.9375rem) {
+  body {
+    background-image: url("../../images/destination/background-destination-tablet.jpg");
+  }
+}
+@media (max-width: 640px) {
+  body {
+    background-image: url("../../images/destination/background-destination-mobile.jpg");
+  }
 }
 
 .hero {
@@ -648,6 +661,19 @@ body {
   }
 }
 
+.active {
+  opacity: 0;
+  animation: fadeIn 0.7s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .hero__content {
   display: flex;
   align-items: center;

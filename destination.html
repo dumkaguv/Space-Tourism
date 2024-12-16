@@ -84,15 +84,15 @@
 
     <!-- Hero Section -->
     <main class="content">
-      <div class="hero container">
+      <section class="hero container">
         <div class="hero__title">
           <span class="hero__title-number">01</span>
           <h1 class="hero__title-text">Pick your Destination</h1>
         </div>
-        <div class="hero__content">
+        <div class="hero__content active">
           <img
             class="hero__content-image"
-            src="./assets/images/destination/image-moon.png"
+            src="./assets/images/destination/image-moon.webp"
             alt="Moon"
             width="480"
             height="480"
@@ -102,16 +102,27 @@
             <nav class="hero__menu">
               <ul class="hero__menu-list">
                 <li class="hero__menu-item" tabindex="0">
-                  <div class="hero__menu-item-tab active-link">Moon</div>
+                  <div
+                    class="hero__menu-item-tab active-link active-tab"
+                    data-tab="Moon"
+                  >
+                    Moon
+                  </div>
                 </li>
                 <li class="hero__menu-item" tabindex="0">
-                  <div class="hero__menu-item-tab">Mars</div>
+                  <div class="hero__menu-item-tab" data-tab="Mars">
+                    Mars
+                  </div>
                 </li>
                 <li class="hero__menu-item" tabindex="0">
-                  <div class="hero__menu-item-tab">Europa</div>
+                  <div class="hero__menu-item-tab" data-tab="Europa">
+                    Europa
+                  </div>
                 </li>
                 <li class="hero__menu-item" tabindex="0">
-                  <div class="hero__menu-item-tab">Titan</div>
+                  <div class="hero__menu-item-tab" data-tab="Titan">
+                    Titan
+                  </div>
                 </li>
               </ul>
             </nav>
@@ -137,7 +148,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </main>
 
     <!-- Modal -->
@@ -205,5 +216,6 @@
       </div>
     </div>
     <script src="./assets/scripts/modules/home/index.js"></script>
+    <script src="./assets/scripts/modules/destination/index.js"></script>
   </body>
 </html>

@@ -3,6 +3,16 @@
 body {
   background: url("../../images/destination/background-destination-desktop.jpg")
     center / cover;
+
+  @include tablet() {
+    background-image: url("../../images/destination/background-destination-tablet.jpg");
+  }
+
+  @include mobile-m() {
+    background-image: url("../../images/destination/background-destination-mobile.jpg");
+  }
+
+  background-color: var(--color-dark);
 }
 
 .hero {
@@ -28,6 +38,20 @@ body {
   &-text {
     @include textPreset-5();
     color: var(--color-light);
+  }
+}
+
+.active {
+  opacity: 0;
+  animation: fadeIn 0.7s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -136,7 +160,7 @@ body {
 
 .hero__menu-list {
   display: flex;
-  
+
   column-gap: var(--spacing-400);
   -webkit-tap-highlight-color: transparent;
 
