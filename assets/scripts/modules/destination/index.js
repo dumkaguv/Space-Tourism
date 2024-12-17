@@ -22,24 +22,16 @@ function switchTab() {
       const dataDestinations = data.destinations;
 
       tabs.forEach((tab) => {
+        tab.setAttribute("tabindex", "0");
+
         tab.addEventListener("click", () => {
-          if (tab.classList.contains(activeLinkClass)) {
-            return;
-          }
+          handleTabChange(tab, dataDestinations);
+        });
 
-          const tabData = tab.dataset.tab;
-          const destination = dataDestinations.find(
-            (data) => data.name === tabData
-          );
-
-          if (destination) {
-            tabs.forEach((tab) =>
-              tab.classList.remove(activeLinkClass, activeTabClass)
-            );
-            tab.classList.add(activeLinkClass, activeTabClass);
-
-            triggerAnimation(contentDiv);
-            updateTabContent(destination);
+        tab.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            handleTabChange(tab, dataDestinations);
           }
         });
       });
@@ -47,6 +39,27 @@ function switchTab() {
     .catch((error) => {
       console.error("Ошибка загрузки данных:", error);
     });
+}
+
+function handleTabChange(tab, dataDestinations) {
+  if (tab.classList.contains(activeLinkClass)) {
+    return;
+  }
+
+  const tabData = tab.dataset.tab;
+  const destination = dataDestinations.find(
+    (data) => data.name === tabData
+  );
+
+  if (destination) {
+    tabs.forEach((tab) =>
+      tab.classList.remove(activeLinkClass, activeTabClass)
+    );
+    tab.classList.add(activeLinkClass, activeTabClass);
+
+    triggerAnimation(contentDiv);
+    updateTabContent(destination);
+  }
 }
 
 function updateTabContent(destination) {
