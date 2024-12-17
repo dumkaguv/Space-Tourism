@@ -6,8 +6,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Destination</title>
-    <link rel="stylesheet" href="./assets/styles/main/header&modal.css" />
+    <title>Crew</title>
+    <link rel="stylesheet" href="./assets/styles/main/technology.css" />
   </head>
   <body>
     <header class="header">
@@ -43,10 +43,7 @@
             </a>
           </li>
           <li class="header__menu-item">
-            <a
-              class="header__menu-link"
-              href="./destination.html"
-            >
+            <a class="header__menu-link" href="./destination.html">
               <span class="header__menu-link-number">01</span>
               <div class="header__menu-link-text">Destination</div>
             </a>
@@ -58,7 +55,10 @@
             </a>
           </li>
           <li class="header__menu-item">
-            <a class="header__menu-link active-link" href="./technology.html">
+            <a
+              class="header__menu-link active-link"
+              href="./technology.html"
+            >
               <span class="header__menu-link-number">03</span>
               <div class="header__menu-link-text">Technology</div>
             </a>
@@ -81,7 +81,68 @@
         </svg>
       </button>
     </header>
-    <main class="content"></main>
+
+    <!-- Hero Section -->
+    <main class="content">
+      <section class="hero container">
+        <div class="hero__title">
+          <span class="hero__title-number">03</span>
+          <h1 class="hero__title-text">Space Launch 101</h1>
+        </div>
+        <div class="hero__content active">
+          <div class="hero__inner">
+            <!-- Inner Content -->
+            <!-- Pagination -->
+            <ul class="hero__pagination">
+              <li class="hero__pagination-item">
+                <span class="visually-hidden">Pagination circle 1</span>
+                <button
+                  class="hero__pagination-button is-current"
+                  type="button"
+                  data-index="0"
+                >1</button>
+              </li>
+              <li class="hero__pagination-item">
+                <span class="visually-hidden">Pagination circle 2</span>
+                <button
+                  class="hero__pagination-button"
+                  type="button"
+                  data-index="1"
+                >2</button>
+              </li>
+              <li class="hero__pagination-item">
+                <span class="visually-hidden">Pagination circle 3</span>
+                <button
+                  class="hero__pagination-button"
+                  type="button"
+                  data-index="2"
+                >3</button>
+              </li>
+            </ul>
+            <div class="hero__inner-info-wrapper">
+              <h2 class="hero__inner-terminology">The Terminology…</h2>
+              <h3 class="hero__inner-name">Launch Vehicle</h3>
+              <p class="hero__inner-description">
+                A launch vehicle or carrier rocket is a rocket-propelled
+                vehicle used to carry a payload from Earth's surface to
+                space, usually to Earth orbit or beyond. Our WEB-X carrier
+                rocket is the most powerful in operation. Standing 150
+                metres tall, it's quite an awe-inspiring sight on the
+                launch pad!
+              </p>
+            </div>
+            <img
+              class="hero__content-image"
+              src="./assets/images/technology/image-launch-vehicle-portrait.jpg"
+              alt="Commander Douglas Hurley"
+              width="600"
+              height="600"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
     <!-- Modal -->
     <div class="modal-burger visible-mobile-m">
       <button class="modal-burger__close" type="button">
@@ -122,10 +183,7 @@
               </a>
             </li>
             <li class="header__menu-item">
-              <a
-                class="header__menu-link"
-                href="./destination.html"
-              >
+              <a class="header__menu-link" href="./destination.html">
                 <span class="header__menu-link-number">01</span>
                 <div class="header__menu-link-text">Destination</div>
               </a>
@@ -137,7 +195,10 @@
               </a>
             </li>
             <li class="header__menu-item">
-              <a class="header__menu-link active-link" href="./technology.html">
+              <a
+                class="header__menu-link active-link"
+                href="./technology.html"
+              >
                 <span class="header__menu-link-number">03</span>
                 <div class="header__menu-link-text">Technology</div>
               </a>
@@ -147,5 +208,6 @@
       </div>
     </div>
     <script src="./assets/scripts/modules/home/index.js"></script>
+    <script src="./assets/scripts/modules/crew/index.js"></script>
   </body>
 </html>

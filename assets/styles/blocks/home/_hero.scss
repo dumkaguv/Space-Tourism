@@ -16,6 +16,7 @@
 
 .hero {
   --header-height: #{toRem(-136)};
+  
   align-content: end;
   margin-top: var(--header-height);
   height: 100dvh;
