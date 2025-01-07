@@ -124,9 +124,8 @@
 
         @include mobile-m() {
           &::after {
-            right: 0;
-            width: 3px;
-            height: 100%;
+            width: 0;
+            height: 0;
           }
         }
       }

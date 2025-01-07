@@ -502,9 +502,8 @@ h4,
 }
 @media (hover: hover) and (max-width: 640px) {
   .header__menu-link:hover::after {
-    right: 0;
-    width: 3px;
-    height: 100%;
+    width: 0;
+    height: 0;
   }
 }
 @media (hover: none) {
@@ -514,9 +513,8 @@ h4,
 }
 @media (hover: none) and (max-width: 640px) {
   .header__menu-link:active::after {
-    right: 0;
-    width: 3px;
-    height: 100%;
+    width: 0;
+    height: 0;
   }
 }
 
